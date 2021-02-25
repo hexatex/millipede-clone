@@ -2,15 +2,29 @@
 
 class Stage extends Model
 {
-    /** @var ?Level */
+    /** @var ?Contracts\Level */
     protected $level;
 
-    public function setLevel(Contracts\Level $level)
+    /** @var ?Score */
+    protected $score;
+
+    public function setLevel(Contracts\Level $level): void
     {
+        $this->level = $level;
     }
 
-    public function getLevel(Contracts\Level $level)
+    public function getLevel(): Contracts\Level
     {
+        return $this->level;
+    }
 
+    public function setScore(Score $score): void
+    {
+        $this->score = $score;
+    }
+
+    public function getScore(): Score
+    {
+        return $this->score;
     }
 }

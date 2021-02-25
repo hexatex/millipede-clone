@@ -2,15 +2,11 @@
 
 class StageService
 {
-    /** @var Stage */
-    private $stage;
-
-    public function get(): Stage
+    public function get(Score $score): Stage
     {
-        if (!$this->stage) {
-            $this->stage = new Stage;
-        }
+        $stage = new Stage;
+        $stage->setScore($score);
 
-        return $this->stage;
+        return $stage;
     }
 }

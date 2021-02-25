@@ -10,14 +10,15 @@ class App
     /** @var Stage */
     private $stage;
 
-    private $points;
+    private $score;
 
     public function __construct()
     {
         $this->stageService = new StageService;
         $this->levelService = new LevelService;
 
-        $this->stage = $this->stageService->get();
+        $this->score = new Score;
+        $this->stage = $this->stageService->get($this->score);
     }
 
     public function main()
