@@ -2,5 +2,5 @@
 
 abstract class Model
 {
-
+    use HasEvents, HasCode;
 }

@@ -3,10 +3,20 @@
 class Score extends DBModel
 {
     /** @var int */
-    protected $score = 0;
+    protected $points = 0;
 
-    public function setScore(int $score): void
+    public function setPoints(int $points): void
     {
-        $this->score = $score;
+        $this->points = $points;
+    }
+
+    public function getPoints(): int
+    {
+        return $this->points;
+    }
+
+    public function incrementPoints(int $points)
+    {
+        $this->points = $this->points + $points;
     }
 }

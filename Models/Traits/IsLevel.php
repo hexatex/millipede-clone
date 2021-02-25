@@ -2,16 +2,15 @@
 
 trait IsLevel
 {
-    /** @var Closure */
-    protected $_onLevelCompletion;
-
     /** @var array */
     protected $characters = [];
 
-    public function onLevelCompletion(Closure $closure): void
+    abstract protected function on(string $eventCode, Closure $closure, Closure $returnParams = null): Event;
+
+    public function onLevelCompletion(Closure $closure): Event
     {
-        $this->_onLevelCompletion = $closure;
-    }
+        return $this->on('level-completion', $closure);
+   }
 
     public function addCharacter(Character $character): void
     {

@@ -10,6 +10,7 @@ class App
     /** @var Stage */
     private $stage;
 
+    /** @var Score */
     private $score;
 
     public function __construct()
@@ -24,9 +25,10 @@ class App
     public function main()
     {
         $firstLevel = $this->levelService->get();
-        $firstLevel->onLevelCompletion(function (Contracts\Level $previousLevel) {
+        $firstLevel->onLevelCompletion(function (Event $event, Contracts\Level $previousLevel) {
             $nextLevel = $this->levelService->get($previousLevel);
             $this->stage->setLevel($nextLevel);
+            $event->detach();
         });
 
         $this->stage->setLevel($firstLevel);
