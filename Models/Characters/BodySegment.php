@@ -2,6 +2,8 @@
 
 class BodySegment extends Model implements Character
 {
+    use IsCharacter;
+
     /** @var string */
     protected $bodySegmentType = BodySegmentTypes::bodyRing;
 
