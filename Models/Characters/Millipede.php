@@ -14,7 +14,10 @@ class Millipede extends Model implements Character
     {
         if (!$this->bodySegmentCount) {
             $bodySegment->setBodySegmentType(BodySegmentTypes::headAndTail);
-        } else {
+        } else if ($this->bodySegmentCount === 1) {
+            $this->bodySegments[0]->setBodySegmentType(BodySegmentTypes::tail);
+            $bodySegment->setBodySegmentType(BodySegmentTypes::head);
+        } else if ($this->bodySegmentCount >= 2) {
             $this->bodySegments[$this->bodySegmentCount]->setBodySegmentType(BodySegmentTypes::bodyRing);
             $bodySegment->setBodySegmentType(BodySegmentTypes::head);
         }

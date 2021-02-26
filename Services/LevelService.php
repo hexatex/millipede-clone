@@ -2,13 +2,20 @@
 
 class LevelService
 {
-    public function get(Contracts\Level $previousLevel = null)
+    private $swarmService;
+
+    public function __construct()
+    {
+        $this->swarmService = new SwarmService;
+    }
+
+    public function get(Score $score, Contracts\Level $previousLevel = null)
     {
         $level = new Level;
 
-        if (!$previousLevel) {
+        $swarms = $this->swarmService->index($previousLevel ?: $level);
 
-        }
+        $level->setSwarms($swarms);
 
         return $level;
     }

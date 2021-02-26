@@ -1,14 +1,6 @@
 <?php
 
-class SpiderGang extends Model implements Character
+class SpiderGang extends Model implements Character, \Contracts\Swarm
 {
-    use IsCharacter;
-
-    /** Spider[]  */
-    protected $spiders = [];
-
-    public function addSpider(Spider $spider): void
-    {
-        array_push($this->spiders, $spider);
-    }
+    use IsCharacter, IsSwarm;
 }
