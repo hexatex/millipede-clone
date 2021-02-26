@@ -4,7 +4,7 @@ class SpiderGang extends Model implements Character
 {
     use IsCharacter;
 
-    /** array|Spider[]  */
+    /** Spider[]  */
     protected $spiders = [];
 
     public function addSpider(Spider $spider): void

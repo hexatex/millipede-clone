@@ -4,10 +4,10 @@ class Event
 {
     use HasCode;
 
-    /** @var Closure */
+    /** @var ?Closure */
     protected $on;
 
-    /** @var Closure */
+    /** @var ?Closure */
     protected $_detach;
 
     public function setOn(Closure $on): void
@@ -15,10 +15,12 @@ class Event
         $this->on = $on;
     }
 
-    /** @return mixed */
+    /** @return mixed|void */
     public function trigger()
     {
-       return ($this->on)();
+        if ($this->on) {
+            return ($this->on)();
+        }
     }
 
     public function setDetach(Closure $detach): void
@@ -28,6 +30,8 @@ class Event
 
     public function detach(): void
     {
-        ($this->_detach)();
+        if ($this->_detach) {
+            ($this->_detach)();
+        }
     }
 }

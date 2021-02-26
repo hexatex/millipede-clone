@@ -2,7 +2,7 @@
 
 trait IsLevel
 {
-    /** @var array */
+    /** @var Character[] */
     protected $characters = [];
 
     abstract protected function on(string $eventCode, Closure $closure, Closure $returnParams = null): Event;

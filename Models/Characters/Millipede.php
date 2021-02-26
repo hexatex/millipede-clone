@@ -4,7 +4,7 @@ class Millipede extends Model implements Character
 {
     use IsCharacter;
 
-    /** @var array|BodySegment[] */
+    /** @var BodySegment[] */
     protected $bodySegments = [];
 
     /** @var int */

@@ -2,8 +2,8 @@
 
 trait HasEvents
 {
-    /** @var Event[]|array */
-    protected $events;
+    /** @var Event[] */
+    protected $events = [];
 
     protected function on(string $eventCode, Closure $closure, Closure $returnParams = null): Event
     {
