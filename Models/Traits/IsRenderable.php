@@ -14,6 +14,8 @@ trait IsRenderable
     /** @var float */
     protected $width = 0;
 
+    protected $zIndex = ZIndices::groundLevel;
+
     public function getPositionX(): float
     {
         return $this->positionX;
@@ -52,5 +54,15 @@ trait IsRenderable
     public function setHeight(float $height): void
     {
         $this->height = $height;
+    }
+
+    public function getZIndex(): int
+    {
+        return $this->zIndex;
+    }
+
+    public function setZIndex(int $zIndex): void
+    {
+        $this->zIndex = $zIndex;
     }
 }

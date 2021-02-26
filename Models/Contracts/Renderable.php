@@ -10,4 +10,6 @@ interface Renderable
     public function setWidth(float $width): void;
     public function getHeight(): float;
     public function setHeight(float $height): void;
+    public function getZIndex(): int;
+    public function setZIndex(int $zIndex): void;
 }

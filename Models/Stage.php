@@ -4,6 +4,9 @@ class Stage extends Model implements Renderable
 {
     use IsRenderable;
 
+    /** @var ?Archer */
+    protected $archer;
+
     /** @var ?Contracts\Level */
     protected $level;
 
@@ -36,6 +39,11 @@ class Stage extends Model implements Renderable
     /*
      * Public
      */
+    public function setArcher(Archer $archer): void
+    {
+        $this->archer = $archer;
+    }
+
     public function setLevel(Contracts\Level $level): void
     {
         $this->level = $level;
