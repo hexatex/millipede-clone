@@ -1,7 +1,5 @@
 <?php
 
-use Contracts\Level;
-
 class App
 {
     /** @var StageService */
@@ -25,7 +23,7 @@ class App
         $this->stage = $this->stageService->get($this->score);
     }
 
-    public function main()
+    public function main(): void
     {
         $firstLevel = $this->levelService->get($this->score);
         $this->stage->setLevel($firstLevel);

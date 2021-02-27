@@ -6,4 +6,12 @@ class Mushroom implements Character
 
     /** @var int */
     protected $remaining = 4;
+
+    /*
+     * Character
+     */
+    public function getRemaining(): int
+    {
+        return $this->remaining;
+    }
 }
