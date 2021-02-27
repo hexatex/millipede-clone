@@ -1,14 +1,11 @@
 <?php
 
-class Stage extends Model implements Renderable
+class GameStage extends Model
 {
-    use IsRenderable, HasEvents;
+    use IsStage;
 
     /** @var ?Archer */
     protected $archer;
-
-    /** @var ?Contracts\Level */
-    protected $level;
 
     /** @var ?Score */
     protected $score;
@@ -41,19 +38,12 @@ class Stage extends Model implements Renderable
         return ZIndices::stage;
     }
 
+    /*
+     * Accessors & Mutators
+     */
     public function setArcher(Archer $archer): void
     {
         $this->archer = $archer;
-    }
-
-    public function setLevel(Contracts\Level $level): void
-    {
-        $this->level = $level;
-    }
-
-    public function getLevel(): ?Contracts\Level
-    {
-        return $this->level;
     }
 
     public function setScore(Score $score): void
@@ -64,21 +54,5 @@ class Stage extends Model implements Renderable
     public function getScore(): ?Score
     {
         return $this->score;
-    }
-
-    /*
-     * Public
-     */
-    public function start(): void
-    {
-        // Todo: do something
-    }
-
-    /*
-     * Events
-     */
-    public function onLevelCompletion(Closure $closure): Event
-    {
-        return $this->on('level-completion', $closure);
     }
 }

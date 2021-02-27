@@ -10,7 +10,7 @@ class App
     /** @var LevelService */
     private $levelService;
 
-    /** @var Stage */
+    /** @var GameStage */
     private $stage;
 
     /** @var Score */

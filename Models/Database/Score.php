@@ -15,7 +15,7 @@ class Score extends DBModel
         return $this->points;
     }
 
-    public function incrementPoints(int $points)
+    public function incrementPoints(int $points): void
     {
         $this->points = $this->points + $points;
     }

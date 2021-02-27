@@ -9,11 +9,11 @@ class StageService
         $this->archerService = new ArcherService;
     }
 
-    public function get(Score $score): Stage
+    public function get(Score $score): GameStage
     {
         $archer = $this->archerService->get();
 
-        $stage = new Stage;
+        $stage = new GameStage;
         $stage->setScore($score);
         $stage->setArcher($archer);
 
