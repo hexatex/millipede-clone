@@ -14,7 +14,6 @@ class LevelService
         $level = new Level;
 
         $swarms = $this->swarmService->index($previousLevel ?: $level);
-
         $level->setSwarms($swarms);
 
         return $level;

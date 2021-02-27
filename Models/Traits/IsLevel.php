@@ -2,18 +2,14 @@
 
 trait IsLevel
 {
-    /** @var Character[] */
-    protected $characters = [];
+    /** @var Swarm[] */
+    protected $swarms = [];
 
-    abstract protected function on(string $eventCode, Closure $closure, Closure $returnParams = null): Event;
-
-    public function onLevelCompletion(Closure $closure): Event
+    /**
+     * @param Swarm[] $swarms
+     */
+    public function setSwarms(array $swarms): void
     {
-        return $this->on('level-completion', $closure);
-   }
-
-    public function addCharacter(Character $character): void
-    {
-        array_push($this->characters, $character);
+        $this->swarms = $swarms;
     }
 }

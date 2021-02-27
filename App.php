@@ -1,5 +1,7 @@
 <?php
 
+use Contracts\Level;
+
 class App
 {
     /** @var StageService */
@@ -26,13 +28,13 @@ class App
     public function main()
     {
         $firstLevel = $this->levelService->get($this->score);
-        $firstLevel->onLevelCompletion(function (Event $event, Contracts\Level $previousLevel) {
-            $nextLevel = $this->levelService->get($previousLevel);
+        $this->stage->setLevel($firstLevel);
+        $this->stage->onLevelCompletion(function (Event $event, Contracts\Level $previousLevel) {
+            $nextLevel = $this->levelService->get($this->score, $previousLevel);
             $this->stage->setLevel($nextLevel);
-            $event->detach();
         });
 
-        $this->stage->setLevel($firstLevel);
+        $this->stage->start();
     }
 }
 

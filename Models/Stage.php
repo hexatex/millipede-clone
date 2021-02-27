@@ -2,7 +2,7 @@
 
 class Stage extends Model implements Renderable
 {
-    use IsRenderable;
+    use IsRenderable, HasEvents;
 
     /** @var ?Archer */
     protected $archer;
@@ -36,9 +36,11 @@ class Stage extends Model implements Renderable
         return Dimensions::stageHeight;
     }
 
-    /*
-     * Public
-     */
+    public function getZIndex(): int
+    {
+        return ZIndices::stage;
+    }
+
     public function setArcher(Archer $archer): void
     {
         $this->archer = $archer;
@@ -62,5 +64,21 @@ class Stage extends Model implements Renderable
     public function getScore(): ?Score
     {
         return $this->score;
+    }
+
+    /*
+     * Public
+     */
+    public function start(): void
+    {
+        // Todo: do something
+    }
+
+    /*
+     * Events
+     */
+    public function onLevelCompletion(Closure $closure): Event
+    {
+        return $this->on('level-completion', $closure);
     }
 }

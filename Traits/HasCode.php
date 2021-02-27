@@ -10,6 +10,9 @@ trait HasCode
         $this->code = uniqid();
     }
 
+    /*
+     * Public
+     */
     public function getCode(): string
     {
         return $this->code;

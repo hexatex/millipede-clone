@@ -15,17 +15,20 @@ class Event
         $this->on = $on;
     }
 
+    public function setDetach(Closure $detach): void
+    {
+        $this->_detach = $detach;
+    }
+
+    /*
+     * Public
+     */
     /** @return mixed|void */
     public function trigger()
     {
         if ($this->on) {
             return ($this->on)();
         }
-    }
-
-    public function setDetach(Closure $detach): void
-    {
-        $this->_detach = $detach;
     }
 
     public function detach(): void
