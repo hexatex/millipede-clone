@@ -1,9 +1,7 @@
 <?php
 
-class Mushroom implements Character
+class Mushroom extends Character
 {
-    use IsCharacter;
-
     /** @var int */
     protected $remaining = 4;
 

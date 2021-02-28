@@ -1,6 +1,5 @@
 <?php
 
-class Beetle extends Model implements Character
+class Beetle extends Character
 {
-    use IsCharacter;
 }

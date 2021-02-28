@@ -1,6 +1,5 @@
 <?php
 
-class Inchworm extends Model implements Character
+class Inchworm extends Character
 {
-    use IsCharacter;
 }

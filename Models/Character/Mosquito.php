@@ -1,6 +1,5 @@
 <?php
 
-class Mosquito extends Model implements Character
+class Mosquito extends Character
 {
-    use IsCharacter;
 }

@@ -1,6 +1,6 @@
 <?php
 
-trait IsCharacter
+abstract class Character extends Model implements Renderable
 {
     use IsRenderable;
 

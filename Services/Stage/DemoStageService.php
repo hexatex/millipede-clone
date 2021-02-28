@@ -4,9 +4,9 @@ class DemoStageService
 {
     private $levelService;
 
-    public function __construct(LevelService $levelService)
+    public function __construct()
     {
-        $this->levelService = $levelService;
+        $this->levelService = new LevelService;
     }
 
     /**

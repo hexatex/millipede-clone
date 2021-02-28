@@ -1,9 +1,7 @@
 <?php
 
-class Millipede extends Model implements Character
+class Millipede extends Character
 {
-    use IsCharacter;
-
     /** @var BodySegment[] */
     protected $bodySegments = [];
 

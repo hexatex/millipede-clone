@@ -1,6 +1,5 @@
 <?php
 
-class DeetBomb extends Model implements Character
+class DeetBomb extends Character
 {
-    use IsCharacter;
 }

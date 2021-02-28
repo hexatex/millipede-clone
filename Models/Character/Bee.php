@@ -1,11 +1,9 @@
 <?php
 
-class Bee extends Model implements Character
+class Bee extends Character
 {
-    use IsCharacter;
-
     /** @var int */
-    protected $remaining = 2;
+    protected $remaining = 2; // Todo: The trait does not have access to this :'( Might need an abstract Character
 
     /*
      * Character

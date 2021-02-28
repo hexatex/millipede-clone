@@ -1,6 +1,6 @@
 <?php
 
-class SpiderGang extends Model implements Character, \Contracts\Swarm
+class SpiderGang extends Character implements \Contracts\Swarm
 {
-    use IsCharacter, IsSwarm;
+    use IsSwarm;
 }

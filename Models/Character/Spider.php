@@ -1,6 +1,5 @@
 <?php
 
-class Spider extends Model implements Character
+class Spider extends Character
 {
-    use IsCharacter;
 }

@@ -1,9 +1,7 @@
 <?php
 
-class BodySegment extends Model implements Character
+class BodySegment extends Character
 {
-    use IsCharacter;
-
     /** @var string */
     protected $bodySegmentType = BodySegmentTypes::bodyRing;
 

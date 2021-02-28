@@ -1,9 +1,7 @@
 <?php
 
-class Dragonfly extends Model implements Character
+class Dragonfly extends Character
 {
-    use IsCharacter;
-
     /*
      * Renderable
      */

@@ -1,6 +1,5 @@
 <?php
 
-class Earwig extends Model implements Character
+class Earwig extends Character
 {
-    use IsCharacter;
 }
