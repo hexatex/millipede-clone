@@ -4,8 +4,8 @@ class GameStage extends Model
 {
     use IsStage;
 
-    /** @var ?Archer */
-    protected $archer;
+    /** @var ?ArcherArea */
+    protected $archerArea;
 
     /** @var ?Score */
     protected $score;
@@ -41,9 +41,9 @@ class GameStage extends Model
     /*
      * Accessors & Mutators
      */
-    public function setArcher(Archer $archer): void
+    public function setArcherArea(ArcherArea $archerArea): void
     {
-        $this->archer = $archer;
+        $this->archerArea = $archerArea;
     }
 
     public function setScore(Score $score): void

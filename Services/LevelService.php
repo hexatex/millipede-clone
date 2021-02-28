@@ -9,7 +9,7 @@ class LevelService
         $this->swarmService = new SwarmService;
     }
 
-    public function get(Score $score, Contracts\Level $previousLevel = null)
+    public function get(Score $score, Contracts\Level $previousLevel = null): Level
     {
         $level = new Level;
 

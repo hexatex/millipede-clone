@@ -1,6 +1,6 @@
 <?php
 
-class StageService
+class ArcherAreaService
 {
     protected $archerService;
 
@@ -9,14 +9,13 @@ class StageService
         $this->archerService = new ArcherService;
     }
 
-    public function get(Score $score): GameStage
+    public function get(): ArcherArea
     {
         $archer = $this->archerService->get();
 
-        $stage = new GameStage;
-        $stage->setScore($score);
-        $stage->setArcher($archer);
+        $archerArea = new ArcherArea;
+        $archerArea->setArcher($archer);
 
-        return $stage;
+        return $archerArea;
     }
 }

@@ -2,10 +2,8 @@
 
 class ScreenService
 {
-    public function getDemoScreen()
+    public function getDemoScreen(): DemoScreen
     {
-
-
         $screen = new DemoScreen;
         $screen->addStage($stage);
     }

@@ -3,8 +3,8 @@
 class SwarmService
 {
     /**
-     * @param Level $previousLevel
      * @return Swarm[]
+     * @param Contracts\Level $previousLevel
      */
     public function index(Contracts\Level $previousLevel): array
     {

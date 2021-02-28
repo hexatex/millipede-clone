@@ -2,31 +2,20 @@
 
 trait IsStage
 {
-    use IsRenderable, HasEvents;
+    use IsRenderable, LevelComplete;
+
+    protected $level;
 
     public function setLevel(Contracts\Level $level): void
     {
         $this->level = $level;
+        $this->level->onLevelCompletion(function (Event $event, Contracts\Level $previousLevel) {
+            $this->complete();
+        });
     }
 
     public function getLevel(): ?Contracts\Level
     {
         return $this->level;
-    }
-
-    /*
-     * Public
-     */
-    public function start(): void
-    {
-        // Todo: do something
-    }
-
-    /*
-     * Events
-     */
-    public function onLevelCompletion(Closure $closure): Event
-    {
-        return $this->on('level-completion', $closure);
     }
 }

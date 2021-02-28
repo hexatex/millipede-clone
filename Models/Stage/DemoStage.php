@@ -14,12 +14,4 @@ class DemoStage extends Model implements Contracts\Stage
     {
         return ZIndices::stage;
     }
-
-    /*
-     * Events
-     */
-    public function onLevelCompletion(Closure $closure): Event
-    {
-        return $this->on('level-completion', $closure);
-    }
 }

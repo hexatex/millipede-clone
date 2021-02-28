@@ -2,7 +2,9 @@
 
 namespace Contracts;
 
-interface Level
+use ILevelComplete;
+
+interface Level extends ILevelComplete
 {
     /**
      * @param Swarm[] $swarms

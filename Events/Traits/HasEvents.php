@@ -22,4 +22,20 @@ trait HasEvents
 
         $this->events[$eventCode][$event->getCode()] = $closure;
     }
+
+    /**
+     * @return mixed|void
+     * @param string $eventCode
+     */
+    protected function trigger(string $eventCode)
+    {
+        if (empty($this->events[$eventCode])) {
+            return;
+        }
+
+        /** @var Event $event */
+        foreach ($this->events[$eventCode] as $event) {
+            $event->trigger();
+        }
+    }
 }

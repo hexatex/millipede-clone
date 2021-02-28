@@ -2,11 +2,8 @@
 
 class App
 {
-    /** @var StageService */
+    /** @var GameStageService */
     private $stageService;
-
-    /** @var LevelService */
-    private $levelService;
 
     /** @var GameStage */
     private $stage;
@@ -16,22 +13,13 @@ class App
 
     public function __construct()
     {
-        $this->stageService = new StageService;
-        $this->levelService = new LevelService;
-
+        $this->stageService = new GameStageService;
         $this->score = new Score;
         $this->stage = $this->stageService->get($this->score);
     }
 
     public function main(): void
     {
-        $firstLevel = $this->levelService->get($this->score);
-        $this->stage->setLevel($firstLevel);
-        $this->stage->onLevelCompletion(function (Event $event, Contracts\Level $previousLevel) {
-            $nextLevel = $this->levelService->get($this->score, $previousLevel);
-            $this->stage->setLevel($nextLevel);
-        });
-
         $this->stage->start();
     }
 }
