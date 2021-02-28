@@ -38,4 +38,16 @@ trait HasEvents
             $event->trigger();
         }
     }
+
+    protected function detach(string $eventCode): void
+    {
+        if (empty($this->events[$eventCode])) {
+            return;
+        }
+
+        /** @var Event $event */
+        foreach ($this->events[$eventCode] as $event) {
+            $event->detach();
+        }
+    }
 }

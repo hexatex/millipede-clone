@@ -1,5 +1,7 @@
 <?php
 
+use Contracts\Stage;
+
 class App
 {
     /** @var GameStageService */
@@ -15,11 +17,20 @@ class App
     {
         $this->stageService = new GameStageService;
         $this->score = new Score;
-        $this->stage = $this->stageService->get($this->score);
     }
 
     public function main(): void
     {
+        $this->start(Players::onePlayer);
+    }
+
+    private function start(int $players)
+    {
+        $this->stage = $this->stageService->get($this->score);
+        $this->stage->onGameOver(function (Event $event, Contracts\Stage $stage) {
+            $event->detach();
+        });
+
         $this->stage->start();
     }
 }

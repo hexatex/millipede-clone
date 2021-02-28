@@ -23,7 +23,8 @@ class GameStageService
         $stage->setScore($score);
         $stage->setArcherArea($archerArea);
         $stage->setLevel($firstLevel);
-        $stage->onLevelCompletion(function (Event $event, Contracts\Level $previousLevel) use ($score, $stage) {
+        $stage->onLevelCompletion(function (Event $event, Contracts\Stage $stage) use ($score) {
+            $previousLevel = $stage->getLevel();
             $nextLevel = $this->levelService->get($score, $previousLevel);
             $stage->setLevel($nextLevel);
         });
