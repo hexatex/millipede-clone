@@ -8,4 +8,5 @@ class Dimensions
     const stageY = 0;
     const stageWidth = 1024;
     const stageHeight = 1280;
+    const archerAreaHeight = 256;
 }

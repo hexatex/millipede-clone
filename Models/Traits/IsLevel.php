@@ -2,7 +2,7 @@
 
 trait IsLevel
 {
-    use IsLevel;
+    use IsLevel, LevelComplete;
 
     /** @var Swarm[] */
     protected $swarms = [];

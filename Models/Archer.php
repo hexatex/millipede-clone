@@ -7,6 +7,6 @@ class Archer extends Model implements Renderable
     public function resetPosition()
     {
         $this->positionX = Positions::archer_start[0];
-        $this->positionX = Positions::archer_start[1];
+        $this->positionY = Positions::archer_start[1];
     }
 }

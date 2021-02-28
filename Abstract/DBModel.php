@@ -1,6 +1,6 @@
 <?php
 
-abstract class DBModel
+abstract class DBModel extends Model
 {
     /*
      * Public
