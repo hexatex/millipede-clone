@@ -9,6 +9,20 @@ class LevelService
         $this->swarmService = new SwarmService;
     }
 
+    public function getDemoLevel(Character $character = null)
+    {
+        $swarm = new Swarm;
+
+        if ($character) {
+            $swarm->addCharacter($character);
+        }
+
+        $level = new Level;
+        $level->setSwarms([$swarm]);
+
+        return $level;
+    }
+
     public function get(Score $score, Contracts\Level $previousLevel = null): Level
     {
         $level = new Level;
