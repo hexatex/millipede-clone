@@ -5,9 +5,8 @@ namespace Contracts;
 use Closure;
 use Event;
 use ILevelComplete;
-use Renderable;
 
-interface Stage extends Renderable, ILevelComplete
+interface Stage extends ILevelComplete
 {
     public function setLevel(\Contracts\Level $level): void;
     public function getLevel(): ?\Contracts\Level;

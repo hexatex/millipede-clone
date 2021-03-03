@@ -1,6 +1,6 @@
 <?php
 
-trait IsRenderable
+abstract class Renderable extends Model
 {
     /** @var float */
     protected $positionX = 0;
@@ -14,6 +14,7 @@ trait IsRenderable
     /** @var float */
     protected $width = 0;
 
+    /** @var int */
     protected $zIndex = ZIndices::groundLevel;
 
     public function getPositionX(): float

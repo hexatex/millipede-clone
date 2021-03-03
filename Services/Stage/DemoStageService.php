@@ -19,11 +19,11 @@ class DemoStageService
         $inchwormStage = $this->get(new Inchworm);
         $deetBombStage = $this->get(new DeetBomb);
         $growthStage = $this->get();
-        $millipedeStage = $this->get(new Dragonfly);
-        $mosquitoStage = $this->get(new Dragonfly);
-        $beeStage = $this->get(new Dragonfly);
-        $beetleStage = $this->get(new Dragonfly);
-        $spiderStage = $this->get(new Dragonfly);
+        $millipedeStage = $this->get(new Millipede);
+        $mosquitoStage = $this->get(new Mosquito);
+        $beeStage = $this->get(new Bee);
+        $beetleStage = $this->get(new Beetle);
+        $spiderStage = $this->get(new Spider);
 
         return [
             $dragonflyStage,
@@ -45,12 +45,13 @@ class DemoStageService
     private function get(Character $character = null)
     {
         $level = $this->demoLevel($character);
+
         $demoStage = new DemoStage;
         $demoStage->setLevel($level);
         $demoStage->onLevelCompletion(function (Event $event, Contracts\Level $previousLevel) use ($demoStage, $character) {
             unset($previousLevel);
 
-            $level = $this->demoLevel($character);
+            $level = $this->demoLevel(clone $character);
 
             $demoStage->setLevel($level);
             $demoStage->start();

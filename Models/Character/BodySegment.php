@@ -1,9 +1,7 @@
 <?php
 
-class BodySegment extends Model implements Renderable
+class BodySegment extends Renderable
 {
-    use IsRenderable;
-
     /** @var string */
     protected $bodySegmentType = BodySegmentTypes::bodyRing;
 

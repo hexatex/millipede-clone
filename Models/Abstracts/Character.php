@@ -1,9 +1,7 @@
 <?php
 
-abstract class Character extends Model implements Renderable
+abstract class Character extends Renderable
 {
-    use IsRenderable;
-
     /** @var int */
     protected $remaining = 1;
 

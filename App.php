@@ -4,6 +4,9 @@ use Contracts\Stage;
 
 class App
 {
+    /** @var ScreenService */
+    private $screenService;
+
     /** @var GameStageService */
     private $stageService;
 
@@ -15,12 +18,14 @@ class App
 
     public function __construct()
     {
+        $this->screenService = new ScreenService;
         $this->stageService = new GameStageService;
         $this->score = new Score;
     }
 
     public function main(): void
     {
+        $screen = $this->screenService->getDemoScreen();
         $this->start(Players::onePlayer);
     }
 

@@ -1,9 +1,7 @@
 <?php
 
-class ArcherArea extends Model implements Renderable
+class ArcherArea extends Renderable
 {
-    use IsRenderable;
-
     /** @var ?Archer */
     protected $archer;
 

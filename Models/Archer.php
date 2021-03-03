@@ -1,10 +1,14 @@
 <?php
 
-class Archer extends Model implements Renderable
+class Archer extends Renderable
 {
-    use IsRenderable;
+    /** @var float */
+    protected $positionX = Positions::archer_start[0];
 
-    public function resetPosition()
+    /** @var float */
+    protected $positionY = Positions::archer_start[1];
+
+    public function resetPosition(): void
     {
         $this->positionX = Positions::archer_start[0];
         $this->positionY = Positions::archer_start[1];

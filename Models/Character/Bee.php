@@ -3,15 +3,7 @@
 class Bee extends Character
 {
     /** @var int */
-    protected $remaining = 2; // Todo: The trait does not have access to this :'( Might need an abstract Character
-
-    /*
-     * Character
-     */
-    public function getRemaining(): int
-    {
-        return $this->remaining;
-    }
+    protected $remaining = 2;
 
     /*
      * Renderable

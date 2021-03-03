@@ -2,7 +2,7 @@
 
 trait IsStage
 {
-    use IsRenderable, LevelComplete;
+    use LevelComplete;
 
     /** @var Contracts\Level */
     protected $level;

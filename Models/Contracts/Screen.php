@@ -2,10 +2,7 @@
 
 namespace Contracts;
 
-use Renderable;
-use GameStage;
-
-interface Screen extends Renderable
+interface Screen
 {
-    public function addStage(GameStage $stage): void;
+    public function addStage(\Contracts\Stage $stage): void;
 }

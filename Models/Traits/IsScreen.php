@@ -2,15 +2,13 @@
 
 trait IsScreen
 {
-    use IsRenderable;
-
-    /** @var GameStage[] */
+    /** @var Contracts\Stage[] */
     protected $stages = [];
 
     /**
-     * @param GameStage $stage
+     * @param Contracts\Stage $stage
      */
-    public function addStage(GameStage $stage): void
+    public function addStage(Contracts\Stage $stage): void
     {
         array_push($this->stages, $stage);
     }
